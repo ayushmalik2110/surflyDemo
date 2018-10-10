@@ -2,35 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Surfly</title>
+    <title>Title</title>
+    <script type="text/javascript" src="co_browsing.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
-    <script>
-(function(s,u,r,f,l,y){s[f]=s[f]||{init:function(){s[f].q=arguments}};
-l=u.createElement(r);y=u.getElementsByTagName(r)[0];l.async=1;
-l.src='https://surfly.com/surfly.js';y.parentNode.insertBefore(l,y);})
-(window,document,'script','Surfly');
-
-var settings = {
-// Surfly session options can be set here, or at the Company/Plan levels.
-widget_key:'8fc3831886724d579a17816349c2af63',
-};
-
-Surfly.init(settings, function(initResult) {
-    if (initResult.success) {
-        // API calls can now be made!
-        if (!Surfly.isInsideSession) {
-           // Surfly.button();
-        }
-    }
-    else{
-        console.log("Surfly was unable to initialize properly.")
-    }
-});
-</script>
 <body>
-<header>Surfly</header>
-    <a href="#surflystart">Start a session</a>
 
+    <div class="container">
+        <form action="#">
+            <label for="fname"><b>First Name</b></label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname"><b>Last Name</b></label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <div id="gender">
+                <b>Gender:</b>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" >
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" >
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="gender" ><br/>
+            </div>
+
+            <div id="maritalStatus">
+                <b>Marital Status:</b>
+                <label for="married">Married</label>
+                <input type="radio" id="married" name="maritalStatus" >
+                <label for="unmarried">Unmarried</label>
+                <input type="radio" id="unmarried" name="maritalStatus" >
+            </div>
+
+            <label for="country"><b>Country</b></label>
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+            </select>
+
+            <label for="subject"><b>About yourself</b></label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+            <a href="#surflystart" id="cobrowse" >Co-Browse Session</a>
+        </form>
+    </div>
 </body>
 </html>
